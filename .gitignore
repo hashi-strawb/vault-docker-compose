@@ -1,0 +1,11 @@
+# Vault (Enterprise) binary
+vault
+
+# Zip files, containing Vault binaries
+vault*.zip
+
+# Init file, from vault operator init
+init.log
+
+# Consul snapshots
+snapshots/*.snap

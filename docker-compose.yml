@@ -1,0 +1,35 @@
+version: '2'
+services:
+
+  # A bare-bones Consul server
+  # This is the same version of Consul as we use, but the config is much simpler
+  # (e.g. ACLs disabled for the benefit of simplifying this docker-compose stack)
+  consul:
+    image: consul:1.4.0
+    volumes:
+    - ./:/tmp/workdir:ro
+    - ./snapshots:/tmp/snapshots
+    working_dir: /tmp/workdir
+    command:
+    - agent
+    - -config-dir=/tmp/workdir/consul.conf
+
+  # Primary Vault server
+  vault:
+    # Uses a Docker image based on the official Vault image
+    # See Dockerfile
+    build: .
+    cap_add:
+    - IPC_LOCK
+    ports:
+    - 8200:8200
+    - 8201:8201
+    volumes:
+    - ./:/tmp/workdir:ro
+    working_dir: /tmp/workdir
+    command:
+    - server
+    - -config
+    - vault.conf/config.json
+    links:
+    - consul:consul

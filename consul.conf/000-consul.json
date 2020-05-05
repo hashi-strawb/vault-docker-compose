@@ -1,0 +1,24 @@
+{
+  "bind_addr": "0.0.0.0",
+  "data_dir": "/opt/consul",
+  "disable_remote_exec": true,
+  "enable_syslog":false,
+  "log_level": "INFO",
+  "ports": {
+    "server": 8300,
+    "serf_lan": 8301,
+    "serf_wan": 8302,
+    "dns": 8600,
+    "http": 8500,
+    "https": -1
+  },
+  "server": true,
+  "datacenter": "lucytest",
+  "client_addr": "0.0.0.0",
+  "telemetry": {
+    "statsd_address": "127.0.0.1:8125"
+  },
+  "skip_leave_on_interrupt": true,
+  "leave_on_terminate" : false,
+  "bootstrap_expect": 1
+}
