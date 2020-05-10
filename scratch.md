@@ -11,6 +11,21 @@ Run:
 ./pre-demo-setup.sh
 ```
 
+
+
+Download images:
+
+```
+docker pull consul:1.4.0
+docker pull vault:1.1.3
+```
+
+
+TODO: Demo write to our test secret
+
+
+
+
 # Demo: Restore Consul (OSS and Enterprise)
 
 
@@ -61,6 +76,7 @@ docker-compose exec vault bash --login
 
 vault operator unseal
 ```
+TODO: Unseal script
 
 
 In Vault UI:
