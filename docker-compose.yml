@@ -26,6 +26,7 @@ services:
     - 8201:8201
     volumes:
     - ./:/tmp/workdir:ro
+    - ./raft:/tmp/raft
     working_dir: /tmp/workdir
     command:
     - server

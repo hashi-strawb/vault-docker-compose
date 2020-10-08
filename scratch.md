@@ -21,7 +21,9 @@ docker pull vault:1.1.3
 ```
 
 
-TODO: Demo write to our test secret
+
+TODO: Launch Vault, init, leave blank
+
 
 
 
