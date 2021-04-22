@@ -4,6 +4,6 @@ function title {
     echo -ne "\033]0;"$*"\007"
 }
 
-title Vault
+title Vault Audit
 
-docker-compose up --build vault
+docker-compose exec vault sh -c "nc -l 5170"

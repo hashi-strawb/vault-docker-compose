@@ -5,7 +5,7 @@ services:
   # This is the same version of Consul as we use, but the config is much simpler
   # (e.g. ACLs disabled for the benefit of simplifying this docker-compose stack)
   consul:
-    image: consul:1.4.0
+    image: consul:1.7.4
     volumes:
     - ./:/tmp/workdir:ro
     - ./snapshots:/tmp/snapshots
